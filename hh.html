@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>KitMine</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+
+      /* Анимированный градиентный фон */
+      background: linear-gradient(270deg, #1a1a2e, #162447, #0f4c75, #1a1a2e);
+      background-size: 800% 800%;
+      animation: gradientAnimation 20s ease infinite;
+    }
+
+    @keyframes gradientAnimation {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    h1 {
+      font-size: 48px;
+      text-shadow: 2px 2px 10px #000000;
+      border: 2px solid #00aaff; /* Цвет обводки */
+      padding: 10px;
+      border-radius: 10px;
+      color: #00aaff; /* Цвет текста */
+      text-align: center;
+      animation: fadeIn 1s ease-in-out;
+      margin: 0 0 20px;
+    }
+
+    .content {
+      text-align: center;
+      margin: 20px;
+      opacity: 0;
+      animation: fadeIn 1s ease-in-out forwards 0.5s;
+    }
+
+    .button {
+      background-color: transparent;
+      border: 2px solid #00aaff; /* Цвет обводки кнопки */
+      color: #00aaff; /* Цвет текста кнопки */
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-size: 18px;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s, transform 0.3s;
+      animation: slideIn 1s ease-in-out forwards 1s;
+      margin: 10px 15px 0 15px;
+      min-width: 200px;
+    }
+
+    .button:hover {
+      background-color: #00aaff; /* Цвет фона кнопки при наведении */
+      color: #ffffff; /* Цвет текста кнопки при наведении */
+      transform: scale(1.1);
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateY(20px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    /* Декор */
+    .decor {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: url('https://www.transparenttextures.com/patterns/black-paper.png');
+      opacity: 0.1;
+      pointer-events: none;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+
+    #mainPage,
+    #donatePage,
+    #featuresPage {
+      position: relative;
+      z-index: 1;
+      max-width: 600px;
+    }
+
+    .username {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #00aaff; /* Цвет текста имени пользователя */
+      font-weight: bold;
+    }
+
+    .features-list {
+      text-align: left;
+      margin: 0 20px 20px 20px;
+      color: #00aaff;
+      font-size: 18px;
+      line-height: 1.5;
+    }
+
+    .features-list h3 {
+      margin-bottom: 5px;
+      color: #00d4ff;
+    }
+  </style>
+</head>
+<body>
+  <div class="decor"></div>
+
+  <div id="mainPage">
+    <h1>KitMine ???</h1>
+    <div class="content">
+      <h2>О нас:</h2>
+      <p>Сервер для майнкрафт для владельцев слабых ПК или любителей серверов в духе легендарной эры Майнкрафта. ????</p>
+      <button class="button" onclick="showDonatePage()">Купить Донат ??</button>
+      <button class="button" onclick="showFeaturesPage()">Возможности Доната ??</button>
+    </div>
+  </div>
+
+  <div id="donatePage" class="hidden">
+    <h1>Покупки Стали Проще ??</h1>
+    <div class="username">@t5mpd</div>
+    <button class="button" onclick="showMainPage()">Назад ??</button>
+  </div>
+
+  <div id="featuresPage" class="hidden">
+    <h1>Возможности Доната ??</h1>
+    <div class="features-list">
+      <h3>Silver</h3>
+      <ul>
+        <li>Kit Silver</li>
+        <li>Отсутствует задержка в чате</li>
+        <li>Частичный Иммунитет от Бана</li>
+      </ul>
+      <h3>Gold</h3>
+      <ul>
+        <li>Kit Gold</li>
+        <li>Зарплата 150 койнов в день</li>
+        <li>Полный Иммунитет от бана</li>
+      </ul>
+      <h3>Diamond</h3>
+      <ul>
+        <li>Kit Diamond</li>
+        <li>Админ чат</li>
+        <li>Зарплата 300 койнов в день</li>
+        <li>Отсутствует задержка в чате</li>
+        <li>Полный Иммунитет от бана</li>
+      </ul>
+      <h3>Nether</h3>
+      <ul>
+        <li>Kit Nether</li>
+        <li>Админ чат</li>
+        <li>Зарплата 300 койнов в день</li>
+        <li>Отсутствует задержка в чате</li>
+        <li>Полный Иммунитет от бана</li>
+        <li>Возможность пойти в ДС с создателем</li>
+      </ul>
+    </div>
+    <button class="button" onclick="showMainPage()">Назад ??</button>
+  </div>
+
+  <!-- Звуковой эффект для кнопок -->
+  <audio id="buttonClick" src="https://www.soundjay.com/button/sounds/button-3.mp3"></audio>
+
+  <!-- Фоновая музыка (автозапуск, зацикливание, приглушена) -->
+  <audio id="backgroundMusic" src="https://cdn.pixabay.com/download/audio/2022/03/17/audio_5e7b3e3a4e.mp3?filename=relaxing-background-music-ambient-11274.mp3" autoplay loop muted></audio>
+
+  <script>
+    function playSound() {
+      const sound = document.getElementById('buttonClick');
+      sound.currentTime = 0; // Сброс времени воспроизведения
+      sound.play();
+    }
+
+    function showDonatePage() {
+      playSound();
+      const main = document.getElementById('mainPage');
+      const donate = document.getElementById('donatePage');
+      const features = document.getElementById('featuresPage');
+      features.classList.add('hidden');
+      main.style.opacity = '0';
+      setTimeout(() => {
+        main.classList.add('hidden');
+        donate.classList.remove('hidden');
+        donate.style.opacity = '1';
+      }, 500);
+    }
+
+    function showFeaturesPage() {
+      playSound();
+      const main = document.getElementById('mainPage');
+      const features = document.getElementById('featuresPage');
+      const donate = document.getElementById('donatePage');
+      donate.classList.add('hidden');
+      main.style.opacity = '0';
+      setTimeout(() => {
+        main.classList.add('hidden');
+        features.classList.remove('hidden');
+        features.style.opacity = '1';
+      }, 500);
+    }
+
+    function showMainPage() {
+      playSound();
+      const main = document.getElementById('mainPage');
+      const donate = document.getElementById('donatePage');
+      const features = document.getElementById('featuresPage');
+      donate.style.opacity = '0';
+      features.style.opacity = '0';
+      setTimeout(() => {
+        donate.classList.add('hidden');
+        features.classList.add('hidden');
+        main.classList.remove('hidden');
+        main.style.opacity = '1';
+      }, 500);
+    }
+
+    // Разрешаем воспроизведение музыки после первого взаимодействия пользователя (если нужно)
+    document.body.addEventListener('click', () => {
+      const bgMusic = document.getElementById('backgroundMusic');
+      if (bgMusic.muted) {
+        bgMusic.muted = false;
+        bgMusic.play().catch(() => {});
+      }
+    }, { once: true });
+  </script>
+</body>
+</html>
