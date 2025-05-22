@@ -1,0 +1,2 @@
+# KitMine
+Server for Minecraft
